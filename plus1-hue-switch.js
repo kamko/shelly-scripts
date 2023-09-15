@@ -7,8 +7,8 @@ let CONFIG = {
 };
 
 let isLightOn = function(response) {
-    if (result.code === 200) {
-        let jsonBody = JSON.parse(result.body);
+    if (response.code === 200) {
+        let jsonBody = JSON.parse(response.body);
         return jsonBody.state.on;
     }
 };
