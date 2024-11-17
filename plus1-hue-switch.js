@@ -3,7 +3,7 @@ let CONFIG = {
     SWITCH_TYPE: 'TOGGLE', // {TOGGLE, EDGE}
     HUE_HUB_IP: '192.168.1.1',
     HUE_LIGHT_ID: '1',
-    HUE_LINKED_LIGHT_IDS: ['2'],
+    HUE_LINKED_LIGHT_IDS: ['2'], // lights that will behave the same way as main light
     HUE_KEY: '<api>'
 };
 
@@ -37,9 +37,9 @@ let switchLightToState = function(wantedState) {
     })
 };
 
-let processHueResponse = function(result, error_code, error) {
+let processHueResponse = function(response, error_code, error) {
     invertLightState(
-        isLightOn(result)
+        isLightOn(response)
     );
 };
 
