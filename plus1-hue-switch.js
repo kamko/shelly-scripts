@@ -18,7 +18,7 @@ let setLightStateTo = function(lightId, wantedState) {
 }
 
 let isLightOn = function(response) {
-    if (result.code === 200) {
+    if (response.code === 200) {
         let jsonBody = JSON.parse(result.body);
         return jsonBody.state.on;
     }
